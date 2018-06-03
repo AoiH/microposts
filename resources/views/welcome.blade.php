@@ -2,8 +2,15 @@
 
 @section('content')
    @if (Auth::check())
-      <?php $user = Auth::user(); ?>
-      {{ $user->name }}
+      <div class="row">
+         <aside class="col-md-4">
+         </aside>
+         <div class="col-xs-8">
+            @if(count($miceoposts) > 0)
+               @include('microposts.microposts',['microposts' => $miceoposts])
+            @endif
+         </div>
+      </div>
    @else
     <div class="center jumbotron">
         <div class="text-center">
@@ -14,3 +21,5 @@
   @endif
 @endsection
 
+
+       

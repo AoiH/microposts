@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', function () { return view('welcome');});
+Route::get('/','MicropostsController@index');
 
 
 Route::get('signup','Auth\RegisterController@showRegistrationForm')->name('signup.get');
