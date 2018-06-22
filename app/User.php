@@ -109,7 +109,7 @@ class User extends Authenticatable
         return false;
     } else {
         // お気に入りしていなければお気に入りに追加する
-        $this->favorite()->attach($userId);
+        $this->favorites()->attach($userId);
         return true;
     }
     }
@@ -134,7 +134,7 @@ class User extends Authenticatable
 
     public function is_favorite($userId)
     {
-    return $this->favorites()->where('favorite_id', $userId)->exists();
+    return $this->favorites()->where('micropost_id', $userId)->exists();
     }
 }
 
