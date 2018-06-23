@@ -19,7 +19,9 @@ Route::group(['middleware' => 'auth'], function ()
         //フォロー
         Route::post('follow', 'UserFollowController@store')->name('user.follow');
         Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
+        //フォロー一覧
         Route::get('followings', 'UsersController@followings')->name('users.followings');
+        //フォロワー一覧
         Route::get('followers', 'UsersController@followers')->name('users.followers');
         
         //お気に入り登録
