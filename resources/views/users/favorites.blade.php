@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     @if (Auth::check())
         <div class="row">
             <aside class="col-xs-4">
@@ -22,6 +24,11 @@
                 </ul>
                 @if (count($favorites) > 0)
                     @include('microposts.microposts', ['microposts' => $favorites])
+                    
+                @else
+                    <div class="text-center">
+                        現在お気に入り登録された投稿はありません
+                    </div>
                 @endif
             </div>
         </div>
